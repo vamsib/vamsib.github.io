@@ -1,0 +1,37 @@
+{
+  "name": "profile",
+  "version": "1.0.0",
+  "description": "Personal site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vamsib/profile.git"
+  },
+  "author": "Vamsidhar Bethanabatla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vamsib/profile/issues"
+  },
+  "homepage": "https://github.com/vamsib/profile#readme",
+  "dependencies": {
+    "contentful": "^7.14.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.1.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-transform-runtime": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.1.0",
+    "html-webpack-plugin": "^4.0.4",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  }
+}
