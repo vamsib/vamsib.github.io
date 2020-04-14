@@ -9,17 +9,12 @@ import {
 import Home from './Home';
 import Article from './Article';
 
+import { CommonStyles } from '../styles/App';
+
 export default function App() {
   return (
     <Router>
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-          </ul>
-        </nav>
         <Switch>
           <Route path="/article/:slug">
             <Article />
@@ -28,6 +23,12 @@ export default function App() {
             <Home />
           </Route>
         </Switch>
+        <style jsx global>{`
+          body {
+            font-family: Roboto, sans-serif;
+            margin: 0;
+          }
+        `}</style>
       </div>
     </Router>
   );
