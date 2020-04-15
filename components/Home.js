@@ -1,13 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { createClient } from 'contentful';
+import { client } from '../lib/contentful';
 
 import { TopArticlesStyles } from '../styles/Home.js';
-
-const client = createClient({
-  space: 'xy4x3ow61yj0',
-  accessToken: 'ViN9cYNMHLaAJyi_zsWmzQiXij0-FOqt2caV5OxFpsw'
-});
 
 function formatDate(date, month, year) {
   const dateSuffix = date > 3 && date <= 20
@@ -40,6 +35,7 @@ export default () => {
         'content_type': 'article',
         'select': ['fields.slug', 'fields.title']
       });
+      console.log(response);
       setArticles(response.items.map(item => {
         const dateObj = new Date(item.sys.createdAt);
         const date = dateObj.getDate();
@@ -47,6 +43,7 @@ export default () => {
         const year = dateObj.getFullYear();
         const formatedDate = formatDate(date, month, year);
         return {
+          id: item.sys.id,
           title: item.fields.title,
           slug: item.fields.slug,
           createdAt: formatedDate 
@@ -68,7 +65,7 @@ export default () => {
               {article.createdAt.month},&nbsp;{article.createdAt.year}
             </span>
           </div>
-          <Link  className="article-title" to={`/article/${article.slug}`}><span>{article.title}</span></Link>
+          <Link  className="article-title" to={`/article/${article.id}/${article.slug}`}><span>{article.title}</span></Link>
         </li>
       ))}</ul>
       <style jsx>{TopArticlesStyles}</style>

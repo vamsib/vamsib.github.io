@@ -14,22 +14,20 @@ import { CommonStyles } from '../styles/App';
 export default function App() {
   return (
     <Router>
-      <div>
-        <Switch>
-          <Route path="/article/:slug">
-            <Article />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-        <style jsx global>{`
-          body {
-            font-family: Roboto, sans-serif;
-            margin: 0;
-          }
-        `}</style>
-      </div>
+      <Switch>
+        <Route path="/article/:articleId/:slug">
+          <Article />
+        </Route>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+      <style jsx global>{`
+        body {
+          font-family: Roboto, sans-serif;
+          margin: 0;
+        }
+      `}</style>
     </Router>
   );
 }

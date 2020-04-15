@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/vamsib/profile#readme",
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^13.4.0",
     "contentful": "^7.14.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
